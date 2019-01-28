@@ -1,0 +1,13 @@
+			.titlespace {
+				margin-top: 35px;
+			}
+			
+			.textbold {
+				font-weight: bold;
+			}
+		
+			@media (max-width: 640px){
+				p { 
+					font-size: 10px;
+				}
+			}
