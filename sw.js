@@ -1,7 +1,7 @@
 const staticAssets=[
 './',
-'./index.html'
-'./lightblue.jpg'
+'./index.html',
+'./lightblue.jpg',
 './lightgold.jpg'];
 
 
