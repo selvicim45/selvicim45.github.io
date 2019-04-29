@@ -47,7 +47,7 @@
         }
     </script>
 	<script>
-	if (serviceWorker' in navigator){
+	if ('serviceWorker' in navigator){
 	try{
 	navigator.ServiceWorker.register('sw.js');
 	console.log('SW registered');
