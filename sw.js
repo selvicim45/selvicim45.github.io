@@ -18,6 +18,6 @@ event.respondWith(cacheFirst(req));
 async function cacheFirst(req)
 {
   const cachedResponse = await cache.match(req);
-  return cachedResponse || fectch(req);
+  return cachedResponse || fetch(req);
 }
 
