@@ -1,0 +1,173 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Location</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
+     
+
+<style>
+/* Style Background color */
+body {
+  background-color: lightgreen;
+}
+#mapid { height: 180px; }
+/* Style the p */
+.p {
+   color: Blue;
+   font-size: 150%;   
+ 
+}
+/* Style the header */
+.header {
+  color: red; 
+}
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  overflow: hidden;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  
+}
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+@media only screen and (max-width:900px) {
+/* Style Background color */
+body {
+  background-color: lightblue;
+}
+/* Style the p */
+.p {
+   color: Blue;
+   font-size: 150%;  
+}
+/* Style the header */
+.header {
+  color: red;
+ }
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px; 	
+  text-decoration: none;
+}
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+}
+</style>
+
+
+
+
+		
+
+
+</head>
+<body>
+ 
+		
+
+<div class="header">
+<h1>Kid's World Toys Store</h1>
+</div>
+<div class="topnav">
+  <a href="Homework3.html">Home</a>
+  <a href="Contact.html">Contact</a>
+  <a href="Product.html">Product</a>
+  <a href="Location.html">Location</a>
+</div>
+<div class="p">
+<p>When we open our store, we will let you know our location here even with directions from your place to it!!!</P>
+</div>
+
+<p id="geo"></p>
+<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+<script>
+  var x = document.getElementById("geo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+  
+  setTimeout(
+     function() {
+	 setMyMap();
+	 },2000);
+}
+
+var latitude  = "";
+var longitude = "";
+function showPosition(position) {
+
+  latitude=position.coords.latitude;
+  longitude=position.coords.longitude;
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+
+  
+function setMyMap() {
+           
+   var mymap = L.map('mapid').setView([ latitude, longitude ], 13);
+
+   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+           attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+           maxZoom: 18,
+           id: 'mapbox.streets',
+           accessToken: 'pk.eyJ1Ijoic2VsdmlhbWlycnRoYWxpbmdhbSIsImEiOiJjanVybGVwZHUwMGdpM3lwZWFjbjlndjR6In0.F2moL85j7BzGpcC7_qPGLA'
+           }).addTo(mymap);
+		   L.marker([ latitude, longitude]).addTo(mymap);
+           L.circle([ latitude, longitude], {
+            color: 'red',
+            fillColor: '#f03',
+           fillOpacity: 0.5,
+            radius: 500
+           }).addTo(mymap);
+   }
+
+</script>
+
+<p>Click the button to See Your Location .</p>
+
+<button onclick="getLocation()">You are Here</button>
+
+ 
+<div id="mapid"></div>
+
+
+
+
+
+</body>
+
+</html>
