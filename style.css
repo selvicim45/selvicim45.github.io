@@ -27,7 +27,7 @@ h1 {
 	font-size: .7em;
 	line-height:1.1em;
 	color: blue;
-	width: 100%;
+	width: 70%;
    }
    }
 @media only screen and (min-width:360px) and (max-width: 500px) {
@@ -42,7 +42,7 @@ h1 {
 	font-size: .7em;
 	line-height:1.1em;
 	color: blue;
-	width: 100%;
+	width: 70%;
    }
 }
 @media only screen and (min-width:411px) {
@@ -57,7 +57,7 @@ h1 {
 	font-size: .7em;
 	line-height:1.1em;
 	color: blue;
-	width: 100%;
+	width: 70%;
    }
 }
 @media only screen and (min-width:768px) and (max-width: 1224px) {
