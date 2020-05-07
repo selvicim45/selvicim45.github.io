@@ -1,0 +1,61 @@
+/* Amma Website
+
+   Layout Styles
+   Author: Arulselvi Amirrthalingam
+   Date:   9/18/2019
+
+   Filename:         amma_styles.css
+   Supporting Files: none
+
+*/
+
+/* Layout styles */
+body{
+	background-color : lightblue;
+	background-image : url("picturesbackgnd.jpg");
+	background-repeat: no-repeat;
+	background-size  : cover;
+	
+}
+body img{
+	width:25%;
+	border-radius: 8px;
+	}	
+
+/* Header Styles */
+h1{
+	color: rgb(255,255,255);
+	text-align : center;
+	text-height: 1.7em;
+} 	
+section nav {
+font-size: 0.9em;
+text-align: center;
+padding-bottom: 20px;
+}
+
+
+nav ul {
+list-style-type: none;
+margin: 10px 50px;
+padding: 10px 10px;
+font-size: 1.8em;
+}
+
+nav ul li {
+display: block;
+float: left;
+width: 10%;
+height: 40px;
+text-align: center;
+border: 1px solid red;
+background-color: lightblue;
+line-height: 1.5em;
+margin: 0px 4px 5px 120px;
+}
+
+section {
+width: 100%;
+float: left;
+background-position: top center;
+}
